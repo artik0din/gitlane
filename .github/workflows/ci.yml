@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [dev, rec, main]
 
+concurrency:
+  group: ${{ github.repository }}
+  cancel-in-progress: false
+
 env:
   CARGO_TERM_COLOR: always
   RUSTFLAGS: -D warnings
@@ -13,7 +17,7 @@ env:
 jobs:
   check:
     name: Format, lint, test
-    runs-on: [self-hosted, linux, x64, chris-sabian]
+    runs-on: [self-hosted, linux, x64, ci]
 
     steps:
       - uses: actions/checkout@v4
