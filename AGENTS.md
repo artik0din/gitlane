@@ -56,5 +56,5 @@ the secret in the first place.
 ## CI
 
 GitHub Actions jobs run **only** on self-hosted runners:
-`runs-on: [self-hosted, linux, x64, chris-sabian]`. Never `ubuntu-latest` or any other
+`runs-on: [self-hosted, linux, x64, <production-runner>]`. Never `ubuntu-latest` or any other
 GitHub-hosted image, in any workflow, ever.
